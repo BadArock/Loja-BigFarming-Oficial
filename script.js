@@ -20,11 +20,6 @@ const STORE = {
 ...informatica,
 
 ...casa,
-
-...automotivo,
-
-...criadores
-
 ]}
 
 const productList = document.querySelector('#product-list');
