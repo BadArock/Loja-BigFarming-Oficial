@@ -1,0 +1,19 @@
+BIG FARMING - COMO COLOCAR NO AR
+
+1. Abra o arquivo script.js.
+2. Na parte STORE, troque:
+   - whatsapp: pelo seu número com DDI e DDD, apenas números.
+     Exemplo: 5511999999999
+   - telegram: pelo seu usuário sem @.
+     Exemplo: bigfarming
+3. Salve e abra index.html com o Live Server no VS Code.
+
+Os três produtos também ficam no script.js. Para trocar nome, preço e selo,
+edite a lista products.
+
+As fotos usadas no site estão na pasta imagens. Para colocar outra foto, copie
+o arquivo para essa pasta e altere o nome dele no style.css, nas classes:
+.produto-1, .produto-2 e .produto-3.
+
+Para publicar grátis no GitHub Pages: envie estes três arquivos para a raiz do
+repositório e, no GitHub, abra Settings > Pages > Deploy from a branch > main.
