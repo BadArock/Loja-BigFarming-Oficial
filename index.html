@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="BIG FARMING: ofertas em tecnologia e atendimento rápido pelo WhatsApp." />
+    <title>BIG FARMING | Ofertas em tecnologia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="announcement">Ofertas em tecnologia <span>•</span> Atendimento rápido pelo WhatsApp</div>
+
+    <header class="header container">
+      <a href="#inicio" class="logo" aria-label="BIG FARMING, início">BIG FARMING<span>.</span></a>
+      <nav class="nav" aria-label="Navegação principal">
+        <a href="#produtos">Produtos</a>
+        <a href="#como-comprar">Como comprar</a>
+        <a href="#contato">Contato</a>
+      </nav>
+      <a class="button button-small" data-contact="whatsapp" data-message="Olá! Quero conhecer as ofertas da BIG FARMING.">Comprar agora</a>
+    </header>
+
+    <main>
+      <section class="hero" id="inicio">
+        <div class="container hero-grid">
+          <div class="hero-content">
+            <p class="eyebrow">Tecnologia com preço justo</p>
+            <h1>As melhores ofertas para o seu <em>dia a dia.</em></h1>
+            <p class="hero-text">Fones, carregadores e acessórios selecionados. Chame no WhatsApp, confirme seu pedido e compre sem complicação.</p>
+            <div class="hero-actions">
+              <a class="button" data-contact="whatsapp" data-message="Olá! Quero fazer um pedido.">Pedir pelo WhatsApp <span>↗</span></a>
+              <a class="text-link" href="#produtos">Ver produtos <span>↓</span></a>
+            </div>
+            <div class="hero-proof">
+              <strong>100%</strong><span>atendimento direto<br />pelo WhatsApp</span>
+            </div>
+          </div>
+          <div class="hero-image" role="img" aria-label="Produtos da loja sobre uma mesa clara">
+            <div class="image-caption"><span>Ofertas em</span><strong>tecnologia</strong></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="benefits container" aria-label="Vantagens">
+        <article><span class="benefit-icon">✦</span><div><strong>Qualidade em cada detalhe</strong><p>Produtos selecionados para você.</p></div></article>
+        <article><span class="benefit-icon">◌</span><div><strong>Compra simples e segura</strong><p>Atendimento direto pelo chat.</p></div></article>
+        <article><span class="benefit-icon">♡</span><div><strong>Atendimento de verdade</strong><p>Tire suas dúvidas sem pressa.</p></div></article>
+      </section>
+
+      <section class="products section container" id="produtos">
+        <div class="section-heading">
+          <div><p class="eyebrow">Mais procurados</p><h2>Ofertas da semana</h2></div>
+          <a class="text-link" data-contact="telegram" data-message="Olá! Quero ver o catálogo completo.">Ver catálogo no Telegram <span>↗</span></a>
+        </div>
+        <div class="product-grid" id="product-list"></div>
+      </section>
+
+      <section class="how section" id="como-comprar">
+        <div class="container how-grid">
+          <div><p class="eyebrow">É fácil comprar</p><h2>Seu pedido em<br /><em>três passos.</em></h2></div>
+          <ol class="steps">
+            <li><span>01</span><div><h3>Escolha seu produto</h3><p>Confira os itens disponíveis e encontre o que combina com você.</p></div></li>
+            <li><span>02</span><div><h3>Chame a gente no chat</h3><p>Envie seu pedido pelo WhatsApp ou Telegram para confirmar os detalhes.</p></div></li>
+            <li><span>03</span><div><h3>Pronto, é só aguardar</h3><p>Combinamos o pagamento e enviamos tudo com cuidado até você.</p></div></li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="contact container" id="contato">
+        <div><p class="eyebrow">Fale com a gente</p><h2>Achou uma oferta que gostou?</h2><p>Chame a BIG FARMING para confirmar estoque, pagamento e entrega.</p></div>
+        <div class="contact-actions">
+          <a class="button" data-contact="whatsapp" data-message="Olá! Preciso de ajuda para escolher um produto.">WhatsApp <span>↗</span></a>
+          <a class="button button-outline" data-contact="telegram" data-message="Olá! Preciso de ajuda para escolher um produto.">Telegram <span>↗</span></a>
+        </div>
+      </section>
+    </main>
+
+    <footer><div class="container footer-content"><a href="#inicio" class="logo">BIG FARMING<span>.</span></a><p>© <span id="year"></span> BIG FARMING. Todos os direitos reservados.</p><div><a data-contact="whatsapp">WhatsApp</a><a data-contact="telegram">Telegram</a></div></div></footer>
+    <a class="floating-chat" data-contact="whatsapp" data-message="Olá! Vim pelo site e quero saber mais." aria-label="Falar pelo WhatsApp">◔<span>Fale conosco</span></a>
+    <script src="script.js"></script>
+  </body>
+</html>
