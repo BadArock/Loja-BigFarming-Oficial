@@ -5,22 +5,7 @@
 const STORE = {
   whatsapp: '5527981325317', // 55 + DDD + número. Somente números.
   telegram: 'https://t.me/+Zxmh8Ij-nuY5NTIx',
-  products: [
-
-...audio,
-
-...energia,
-
-...celulares,
-
-...smartwatch,
-
-...gamer,
-
-...informatica,
-
-...casa,
-]}
+  
 
 const productList = document.querySelector('#product-list');
 const productSearch = document.querySelector('#product-search');
@@ -32,7 +17,7 @@ const orderForm = document.querySelector('#order-form');
 let activeCategory = 'Todos';
 
 const escapeHtml = (value) => String(value).replace(/[&<>'"]/g, (character) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[character]));
-const normalizeText = (value) => value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+const normalizeText = (value) => value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();}
 
 function getFilteredProducts() {
   const search = normalizeText(productSearch.value.trim());
