@@ -1,4 +1,4 @@
-const automotivo = [
+const criadores = [
 
 {
 id:"suporte-celular-carro",
