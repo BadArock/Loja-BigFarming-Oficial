@@ -6,7 +6,17 @@ const STORE = {
   whatsapp: '5527981325317', // 55 + DDD + número. Somente números.
   telegram: 'https://t.me/+Zxmh8Ij-nuY5NTIx',
   
-
+products: [
+  ...audio,
+  ...energia,
+  ...celulares,
+  ...smartwatch,
+  ...gamer,
+  ...informatica,
+  ...casa,
+   ...automotivo,
+   ...criadores
+]
 const productList = document.querySelector('#product-list');
 const productSearch = document.querySelector('#product-search');
 const categoryFilters = document.querySelector('#category-filters');
