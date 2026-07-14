@@ -6,7 +6,7 @@ name:"Lenovo GM2 Pro",
 category:"Áudio",
 price:"R$ 89,90",
 tag:"Mais Vendido",
-image:"imagens/audio/lenovo-gm2-pro.jpg",
+image:"imagens/audio/power-bank-3.jpg",
 description:"Fone gamer Bluetooth com baixa latência e estojo recarregável."
 },
 
