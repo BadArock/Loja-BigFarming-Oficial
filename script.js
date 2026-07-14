@@ -17,7 +17,7 @@ const orderForm = document.querySelector('#order-form');
 let activeCategory = 'Todos';
 
 const escapeHtml = (value) => String(value).replace(/[&<>'"]/g, (character) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[character]));
-const normalizeText = (value) => value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+const normalizeText = (value) => value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();}
 
 function getFilteredProducts() {
   const search = normalizeText(productSearch.value.trim());
@@ -138,4 +138,4 @@ orderForm.addEventListener('submit', (event) => {
 fillProductSelect();
 renderFilters();
 renderProducts();
-document.querySelector('#year').textContent = new Date().getFullYear();}
+document.querySelector('#year').textContent = new Date().getFullYear();
