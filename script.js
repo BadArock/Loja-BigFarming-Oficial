@@ -7,15 +7,15 @@ const STORE = {
   telegram: 'https://t.me/+Zxmh8Ij-nuY5NTIx',
   
 products: [
-  ...audio,
-  ...energia,
-  ...celulares,
-  ...smartwatch,
-  ...gamer,
-  ...informatica,
-  ...casa,
-   ...automotivo,
-   ...criadores
+  ...audio.js,
+  ...energia.js,
+  ...celulares.js,
+  ...smartwatch.js,
+  ...gamer.js,
+  ...informatica.js,
+  ...casa.js  ,
+   ...automotivo.js,
+   ...criadores.js
 ]
 const productList = document.querySelector('#product-list');
 const productSearch = document.querySelector('#product-search');
