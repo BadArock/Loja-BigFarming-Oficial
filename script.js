@@ -52,7 +52,10 @@ function renderProducts() {
   emptyProducts.hidden = products.length > 0;
   productList.innerHTML = products.map((product) => `
     <article class="product-card">
-      <div class="product-image ${escapeHtml(product.image)}"><span>${escapeHtml(product.tag)}</span></div>
+      <div class="product-image"
+     style="background-image:url('${escapeHtml(product.image)}')">
+     <span>${escapeHtml(product.tag)}</span>
+</div>
       <div class="product-info">
         <div><small>${escapeHtml(product.category)}</small><h3>${escapeHtml(product.name)}</h3><p>${escapeHtml(product.price)}</p></div>
         <button class="add-button" type="button" data-select-product="${escapeHtml(product.id)}" aria-label="Pedir ${escapeHtml(product.name)}">+</button>
