@@ -100,8 +100,4 @@ image:"imagens/audio/headset-g9000.jpg",
 description:"Headset com microfone, som surround e LED."
 }
 
-(property) TransformStreamDefaultController: {
- new (): TransformStreamDefaultController<any>;
- prototype: TransformStreamDefaultController<any>;
-}
 ];
