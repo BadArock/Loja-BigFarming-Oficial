@@ -50,8 +50,8 @@ function renderProducts() {
   const products = getFilteredProducts();
   productCounter.textContent = `${products.length} produto${products.length === 1 ? '' : 's'} encontrado${products.length === 1 ? '' : 's'}`;
   emptyProducts.hidden = products.length > 0;
-  productList.innerHTML = products.map((product) => `
-    <article class="product-card">
+  productList.innerHTML = products.map((product) => `  
+  <article class="product-card">
       <div class="product-image"
      style="background-image:url('${escapeHtml(product.image)}')">
      <span>${escapeHtml(product.tag)}</span>
