@@ -679,6 +679,344 @@ footer {
   font-size: 19px;
   margin-right: 8px;
 }
+</section>
+
+<style>
+
+.cube-section{
+
+width:100%;
+
+padding:120px 0;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+overflow:hidden;
+
+background:#090909;
+
+position:relative;
+
+}
+
+.cube-title{
+
+font-size:60px;
+
+font-family:Rajdhani,sans-serif;
+
+color:#39ff14;
+
+margin-bottom:60px;
+
+text-shadow:
+
+0 0 20px #39ff14,
+
+0 0 50px #39ff14;
+
+}
+
+.scene{
+
+width:350px;
+
+height:350px;
+
+position:relative;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+perspective:1200px;
+
+}
+
+.cube{
+
+width:220px;
+
+height:220px;
+
+position:relative;
+
+transform-style:preserve-3d;
+
+animation:
+
+rotateCube 15s linear infinite,
+
+floatCube 5s ease-in-out infinite;
+
+}
+
+.face{
+
+position:absolute;
+
+width:220px;
+
+height:220px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-family:Rajdhani,sans-serif;
+
+font-size:28px;
+
+font-weight:bold;
+
+text-decoration:none;
+
+color:#39ff14;
+
+background:rgba(20,20,20,.25);
+
+border:2px solid #39ff14;
+
+backdrop-filter:blur(8px);
+
+box-shadow:
+
+0 0 15px #39ff14,
+
+inset 0 0 15px rgba(57,255,20,.3);
+
+transition:.4s;
+
+overflow:hidden;
+
+}
+
+.face:hover{
+
+background:#39ff14;
+
+color:#000;
+
+transform:scale(1.05);
+
+box-shadow:
+
+0 0 30px #39ff14,
+
+0 0 60px #39ff14;
+
+}
+
+.face::before{
+
+content:"";
+
+position:absolute;
+
+width:300%;
+
+height:300%;
+
+background:linear-gradient(
+
+45deg,
+
+transparent,
+
+rgba(255,255,255,.3),
+
+transparent
+
+);
+
+animation:shine 6s linear infinite;
+
+}
+
+.front{transform:translateZ(110px);}
+
+.back{transform:rotateY(180deg) translateZ(110px);}
+
+.right{transform:rotateY(90deg) translateZ(110px);}
+
+.left{transform:rotateY(-90deg) translateZ(110px);}
+
+.top{transform:rotateX(90deg) translateZ(110px);}
+
+.bottom{transform:rotateX(-90deg) translateZ(110px);}
+
+.core{
+
+position:absolute;
+
+width:70px;
+
+height:70px;
+
+top:50%;
+
+left:50%;
+
+transform:translate(-50%,-50%);
+
+border-radius:50%;
+
+background:#39ff14;
+
+box-shadow:
+
+0 0 40px #39ff14,
+
+0 0 80px #39ff14,
+
+0 0 120px #39ff14;
+
+animation:corePulse 2s infinite;
+
+}
+
+.shadow{
+
+position:absolute;
+
+bottom:-25px;
+
+width:240px;
+
+height:50px;
+
+background:#39ff14;
+
+border-radius:50%;
+
+filter:blur(30px);
+
+opacity:.25;
+
+animation:shadowPulse 5s ease infinite;
+
+}
+
+@keyframes rotateCube{
+
+0%{
+
+transform:rotateX(-20deg) rotateY(0);
+
+}
+
+100%{
+
+transform:rotateX(-20deg) rotateY(360deg);
+
+}
+
+}
+
+@keyframes floatCube{
+
+0%,100%{
+
+translate:0 0;
+
+}
+
+50%{
+
+translate:0 -20px;
+
+}
+
+}
+
+@keyframes shine{
+
+0%{
+
+transform:translateX(-100%) rotate(25deg);
+
+}
+
+100%{
+
+transform:translateX(100%) rotate(25deg);
+
+}
+
+}
+
+@keyframes corePulse{
+
+0%,100%{
+
+scale:.9;
+
+}
+
+50%{
+
+scale:1.2;
+
+}
+
+}
+
+@keyframes shadowPulse{
+
+0%,100%{
+
+transform:scale(1);
+
+}
+
+50%{
+
+transform:scale(.8);
+
+}
+
+}
+
+</style>
+
+<script>
+
+const scene=document.getElementById("scene");
+
+const cube=document.getElementById("cube");
+
+scene.addEventListener("mousemove",(e)=>{
+
+const r=scene.getBoundingClientRect();
+
+const x=((e.clientX-r.left)/r.width-.5)*40;
+
+const y=((e.clientY-r.top)/r.height-.5)*-40;
+
+cube.style.transform=
+
+`rotateX(${y}deg) rotateY(${x}deg)`;
+
+});
+
+scene.addEventListener("mouseleave",()=>{
+
+cube.style.transform="rotateX(-20deg) rotateY(0deg)";
+
+});
+
+</script>
+
 @media (max-width: 800px) {
   .container {
     width: min(100% - 34px, 1120px);
