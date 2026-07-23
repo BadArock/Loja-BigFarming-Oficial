@@ -1,0 +1,135 @@
+BIG FARMING — ETAPA 1: INVENTÁRIO E BACKUP
+Branch: organizacao
+Data: 2026-07-22
+
+================================================================================
+1. BACKUP CRIADO
+================================================================================
+
+Pasta: _backup/etapa1/
+
+Arquivos copiados (estado original antes de reorganização):
+  - index.html
+  - style.css
+  - script.js
+  - LEIA-ME.txt
+  - dados/audio.js
+  - dados/automotivo.js
+  - dados/casa.js
+  - dados/celulares.js
+  - dados/criadores.js
+  - dados/energia.js
+  - dados/gamer.js
+  - dados/informatica.js
+  - dados/smartwatch.js
+
+Observação: imagens/Kit/ não foi copiada (57 arquivos grandes). Permanece intacta
+na pasta original. O backup cobre todo o código-fonte e dados.
+
+================================================================================
+2. RESUMO DO CATÁLOGO
+================================================================================
+
+Total de produtos listados no site:     90
+Produtos únicos (por ID):               80
+Produtos duplicados:                    10
+
+Categorias (9):
+  - Áudio              (10 produtos) → dados/audio.js
+  - Energia            (10 produtos) → dados/energia.js
+  - Celulares          (10 produtos) → dados/celulares.js
+  - Smartwatch         (10 produtos) → dados/smartwatch.js
+  - Gamer              (10 produtos) → dados/gamer.js
+  - Informática        (10 produtos) → dados/informatica.js
+  - Casa Inteligente   (10 produtos) → dados/casa.js
+  - Automotivo         (10 produtos) → dados/automotivo.js
+  - Automotivo (dup.)  (10 produtos) → dados/criadores.js  ← PROBLEMA
+
+Duplicação crítica:
+  criadores.js é cópia idêntica de automotivo.js (mesmos IDs, nomes, imagens).
+  Os 10 produtos aparecem 2 vezes no catálogo e no formulário de pedido.
+
+================================================================================
+3. IMAGENS — SITUAÇÃO ATUAL
+================================================================================
+
+Referências no código (produtos + hero):  91 caminhos
+Imagens que existem no disco:             0 de 91
+Fotos disponíveis em imagens/Kit/:        57 arquivos (não referenciados)
+
+Pastas esperadas pelo código (inexistentes):
+  imagens/audio/
+  imagens/energia/
+  imagens/celulares/
+  imagens/smartwatch/
+  imagens/gamer/
+  imagens/informatica/
+  imagens/casa/
+  imagens/automotivo/
+  imagens/setup.jpg (hero — referenciado no style.css)
+
+Fotos em imagens/Kit/ (57):
+  ft1.jpg, ft2.jpg, ft3.jpg, ft5.jpg, ft6.jpg, ft7.jpg, ft8.jpg, ft9.jpg,
+  ft11.jpg, ft12.jpg, ft13.jpg, ft15.jpg, ft16.jpg, ft17.jpg, ft18.jpg,
+  ft19.jpg, ft20.jpg, ft21.jpg, ft22.jpg, ft23.jpg, ft24.jpg, ft25.jpg,
+  ft26.jpg, ft27.jpg, ft28.jpg, ft29.jpg, ft30.jpg, ft31.jpg, ft32.jpg,
+  ft33.jpg, ft34.jpg, ft35.jpg, ft36.jpg, ft37.jpg, ft38.jpg, ft39.jpg,
+  ft40.jpg, ft41.jpg, ft42.jpg, ft43.jpg, ft44.jpg, ft45.jpg, ft46.jpg,
+  ft48.jpg, ft49.jpg, ft50.jpg, ft51.jpg, ft52.jpg, ft53.jpg,
+  ft123.jpg, ft132.jpg, ft1234.jpg, ft12345.jpg, ft5674.jpg, ft1000.jpg,
+  img.jpg, img2.jpg
+
+================================================================================
+4. MAPEAMENTO PROVISÓRIO (produto → foto Kit)
+================================================================================
+
+Estratégia proposta para a Etapa 2:
+  - Criar pastas imagens/{categoria}/ conforme paths já usados nos .js
+  - Copiar (não mover) fotos de Kit/ para os destinos corretos
+  - Manter paths nos dados/*.js INALTERADOS (preserva funcionamento)
+  - 1 foto Kit por produto único, na ordem de carregamento do index.html
+  - setup.jpg ← img.jpg (hero)
+
+Ordem de carregamento (index.html):
+  audio → energia → celulares → smartwatch → gamer → informatica → casa → automotivo
+  (criadores.js ignorado no mapeamento por ser duplicata)
+
+Produtos com foto Kit atribuída:  57 de 80 únicos
+Produtos sem foto (needs_photo):  23
+  - Informática: adaptador-usbc, roteador-ax3000 (2)
+  - Casa Inteligente: controle-universal, campainha-smart, aspirador-robo (3)
+  - Automotivo: todos os 10 (automotivo.js vem após esgotar as 57 fotos)
+
+Detalhe completo em: organizacao/mapeamento-imagens-etapa1.json
+
+================================================================================
+5. OUTROS ACHADOS RELEVANTES (para etapas futuras)
+================================================================================
+
+  - style.css tem ~1283 linhas, inclui HTML/JS embutido (cube)
+  - Campo description existe em todos os produtos mas não é usado no script.js
+  - Classes CSS legado: .produto-1, .produto-2, .produto-3, .card
+  - LEIA-ME.txt desatualizado (fala em 3 produtos no script.js)
+  - Links do cube (#audio, #gamer, etc.) não têm destino na página
+
+================================================================================
+6. ARQUIVOS GERADOS NESTA ETAPA
+================================================================================
+
+  organizacao/RELATORIO-ETAPA1.txt          (este arquivo)
+  organizacao/inventario-etapa1.json        (catálogo completo em JSON)
+  organizacao/mapeamento-imagens-etapa1.json (mapeamento produto → foto)
+  organizacao/gerar-inventario-etapa1.js    (script auxiliar para regenerar)
+  _backup/etapa1/                           (backup do código original)
+
+Nenhum arquivo funcional do site foi alterado nesta etapa.
+
+================================================================================
+PRÓXIMA ETAPA (aguardando aprovação)
+================================================================================
+
+Etapa 2 — Corrigir camada de assets:
+  - Criar pastas imagens/{categoria}/
+  - Copiar fotos de Kit/ para os paths referenciados nos .js
+  - Adicionar imagens/setup.jpg para o hero
+  - Manter paths nos dados inalterados
